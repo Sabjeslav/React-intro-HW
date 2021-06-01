@@ -1,6 +1,28 @@
-import { Component } from "react";
+import React, { useState } from "react";
 
-class Aloha extends Component {
+function Aloha(props) {
+  const { name = "React" } = props;
+
+  const [isGreeting, setIsGreeting] = useState(true);
+  const switchState = () => setIsGreeting(!isGreeting);
+
+  const deleteUser = () => {
+    const { users, setUsers, id } = props;
+    setUsers(users.filter((user) => user.id !== id));
+  };
+
+  return (
+    <>
+      <h1 className="heading">
+        {isGreeting ? "Hello" : "Bye"}, {name}!
+      </h1>
+      <button onClick={switchState}>Switch</button>
+      <button onClick={deleteUser}>Delete</button>
+    </>
+  );
+}
+
+/*class Aloha extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,6 +54,6 @@ class Aloha extends Component {
       </>
     );
   }
-}
+}*/
 
 export default Aloha;
