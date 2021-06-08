@@ -1,32 +1,21 @@
-import React, { Component } from "react";
-import UserCard from "./UserCard";
-import style from "./UserList.module.css";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import UserCard, { userPropType } from './UserCard';
+import style from './UserList.module.sass';
 
 class UserList extends Component {
-  componentDidMount() {
-    console.log("Mount string");
-  }
-
-  componentDidUpdate() {
-    console.log("Did update");
-  }
-
-  componentWillUnmount() {
-    console.log("Unmounted");
-  }
-
-  toggleUserSelection = (id) => {
+  toggleUserSelection = id => {
     const { users, setUsers } = this.props;
 
     setUsers(
-      users.map((user) => ({
+      users.map(user => ({
         ...user,
         isSelected: user.id === id ? !user.isSelected : user.isSelected,
       }))
     );
   };
 
-  mapUser = (user) => {
+  mapUser = user => {
     return (
       <UserCard
         key={user.id}
@@ -36,7 +25,7 @@ class UserList extends Component {
     );
   };
 
-  render() {
+  render () {
     const { users } = this.props;
     return (
       <section className={style.container}>
@@ -46,5 +35,10 @@ class UserList extends Component {
     );
   }
 }
+
+UserList.propTypes = {
+  setUsers: PropTypes.func,
+  users: PropTypes.arrayOf(userPropType),
+};
 
 export default UserList;

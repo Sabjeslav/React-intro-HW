@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import Controls from "./Controls";
-import Button from "../Button";
-import TimerDisplay from "./TimerDisplay";
-import style from "./timer.module.css";
+import React, { useState, useEffect } from 'react';
+import Controls from './Controls';
+import Button from '../Button';
+import TimerDisplay from './TimerDisplay';
+import style from './timer.module.sass';
 
-function Timer(props) {
+function Timer (props) {
   const msToTime = (duration = 0) => {
-    const getCorrectTimeString = (v) => (v < 10 ? `0${v}` : v);
+    const getCorrectTimeString = v => (v < 10 ? `0${v}` : v);
 
     const seconds = getCorrectTimeString(((duration / 1000) % 60).toFixed(3));
     const minutes = getCorrectTimeString(
@@ -27,12 +27,12 @@ function Timer(props) {
     setIsRunning(true);
     setStartTime(Date.now());
     setStartButton({
-      caption: "Reset",
+      caption: 'Reset',
       isHidden: false,
       handler: reset,
     });
     setPauseButton({
-      caption: "Pause",
+      caption: 'Pause',
       isHidden: false,
       handler: pause,
     });
@@ -42,7 +42,7 @@ function Timer(props) {
     setIsRunning(false);
     setDiff(Date.now() - startTime);
     setPauseButton({
-      caption: "Resume",
+      caption: 'Resume',
       isHidden: false,
       handler: resume,
     });
@@ -54,12 +54,12 @@ function Timer(props) {
     setStartTime(0);
     setDiff(0);
     setStartButton({
-      caption: "Start",
+      caption: 'Start',
       isHidden: false,
       handler: start,
     });
     setPauseButton({
-      caption: "Pause",
+      caption: 'Pause',
       isHidden: true,
       handler: pause,
     });
@@ -70,20 +70,20 @@ function Timer(props) {
     setStartTime(Date.now() - diff);
   };
 
-  const { name = "Timer" } = props;
+  const { name = 'Timer' } = props;
 
   const [isRunning, setIsRunning] = useState(false);
   const [startTime, setStartTime] = useState(0);
   const [diff, setDiff] = useState(0);
-  const [currentTime, setCurrentTime] = useState("00:00:00.000");
+  const [currentTime, setCurrentTime] = useState('00:00:00.000');
 
   const [startButton, setStartButton] = useState({
-    caption: "Start",
+    caption: 'Start',
     isHidden: false,
     handler: start,
   });
   const [pauseButton, setPauseButton] = useState({
-    caption: "Pause",
+    caption: 'Pause',
     isHidden: true,
     handler: pause,
   });
@@ -100,14 +100,14 @@ function Timer(props) {
     if (startTime) {
       if (!isRunning && diff) {
         setPauseButton({
-          caption: "Resume",
+          caption: 'Resume',
           isHidden: false,
           handler: resume,
         });
       } else {
         setPauseButton({
           ...pauseButton,
-          caption: "Pause",
+          caption: 'Pause',
           handler: pause,
         });
       }

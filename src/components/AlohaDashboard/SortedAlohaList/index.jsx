@@ -1,8 +1,8 @@
-import { Component } from "react";
-import AlohaList from "../AlohaList";
+import { Component } from 'react';
+import AlohaList from '../AlohaList';
 
 class SortedAlohaList extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
       isDirectSort: false,
@@ -22,7 +22,7 @@ class SortedAlohaList extends Component {
     });
   };
 
-  render() {
+  render () {
     const { users, setUsers } = this.props;
     return (
       <>

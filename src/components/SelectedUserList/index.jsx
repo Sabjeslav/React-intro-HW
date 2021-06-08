@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
-function SelectedUserList(props) {
+function SelectedUserList (props) {
   const { users } = props;
-  const selectedUsers = users.filter((user) => user.isSelected);
+  const selectedUsers = users.filter(user => user.isSelected);
   return (
     <div>
       {selectedUsers.map(({ firstName, secondName }) => (
-        <span key="id">
+        <span key='id'>
           {firstName} {secondName}
         </span>
       ))}
