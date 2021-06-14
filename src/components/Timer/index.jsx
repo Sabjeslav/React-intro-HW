@@ -119,9 +119,9 @@ function Timer (props) {
       <h2>{name}</h2>
       <TimerDisplay currentTime={currentTime} />
       <Controls>
-        <Button handler={startButton.handler} caption={startButton.caption} />
+        <Button onClick={startButton.handler}>{startButton.caption}</Button>
         {!pauseButton.isHidden && (
-          <Button handler={pauseButton.handler} caption={pauseButton.caption} />
+          <Button onClick={pauseButton.handler}>{pauseButton.caption}</Button>
         )}
       </Controls>
     </article>

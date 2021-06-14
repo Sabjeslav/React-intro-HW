@@ -1,0 +1,25 @@
+  
+.blueBtn {
+  background-color: cornflowerblue;
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border: 1px solid;
+  border-color: #000; 
+  border-radius: 5px;
+}
+
+.blueBtn:hover {
+  background-color: rgb(122, 163, 238);
+}
+
+.blueBtn:focus {
+  outline: none;
+}
+
+.dark {
+  background-color: #000;
+  border-color: #fff;
+}

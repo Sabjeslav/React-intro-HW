@@ -1,7 +1,7 @@
 import style from './form.module.sass';
 import React, { Component } from 'react';
 import FormInput from './FormInput';
-import * as constants from '../../constants';
+import constants from '../../constants';
 
 const initialValues = {
   firstName: '',
