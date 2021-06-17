@@ -1,19 +1,7 @@
-import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { useMouse } from '../../hooks';
 function MouseMoveHandler ({ render }) {
-  const [x, setX] = useState(0);
-  const [y, setY] = useState(0);
-
-  const handleMouseMove = event => {
-    setX(event.clientX);
-    setY(event.clientY);
-  };
-
-  useEffect(() => {
-    document.addEventListener('mousemove', handleMouseMove);
-    return () => document.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
+  const {x, y} = useMouse();
   return render({ x, y });
 }
 

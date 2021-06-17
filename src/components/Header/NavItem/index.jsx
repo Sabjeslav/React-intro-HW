@@ -9,7 +9,6 @@ function NavItem ({ className, activeClassName, to, children, ...other }) {
     <NavLink to={to}>
       <div
         className={cx(style.navItem, className)}
-        // activeClassName={cx(style.activeLink, activeClassName)}
         {...other}
       >
         {children}

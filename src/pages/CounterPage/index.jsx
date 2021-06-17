@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
-import Counter from '../../components/Counter';
+import Counter from 'components/Counter';
 import style from './CounterPage.module.sass';
-import Button from '../../components/Button';
+import Button from 'components/Button';
 
 class CounterPage extends PureComponent {
   constructor (props) {

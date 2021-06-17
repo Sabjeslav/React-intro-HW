@@ -1,0 +1,56 @@
+{
+  "users" : [
+    {
+      "id": 1,
+      "name": "John Smith",
+      "imageSrc" : "https://"
+    },
+    {
+      "id": 2,
+      "name": "John Doe",
+      "imageSrc" : "https://"
+    },
+    {
+      "id": 3,
+      "name": "John Connor",
+      "imageSrc" : "https://"
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "body": "text",
+      "authorId": 1
+    },
+    {
+      "id": 2,
+      "body": "text",
+      "authorId": 2
+    },
+    {
+      "id": 3,
+      "body": "text",
+      "authorId": 3
+    },
+    {
+      "id": 4,
+      "body": "text",
+      "authorId": 2
+    },
+    {
+      "id": 5,
+      "body": "text",
+      "authorId": 1
+    },
+    {
+      "id": 6,
+      "body": "text",
+      "authorId": 3
+    },
+    {
+      "id": 7,
+      "body": "text",
+      "authorId": 2
+    }
+  ]
+}

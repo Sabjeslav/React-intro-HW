@@ -1,7 +1,9 @@
 import React from 'react';
 import MouseMoveHandler from '../MouseMoveHandler';
+import { useMouse } from '../../hooks';
 
-function Cat ({ x, y }) {
+function CatWithMouse () {
+  const { x, y } = useMouse();
   const styles = {
     width: '100px',
     height: '100px',
@@ -20,11 +22,6 @@ function Cat ({ x, y }) {
       style={styles}
     ></img>
   );
-}
-
-function CatWithMouse () {
-  const renderFunction = ({ x, y }) => <Cat x={x} y={y} />;
-  return <MouseMoveHandler render={renderFunction} />;
 }
 
 export default CatWithMouse;

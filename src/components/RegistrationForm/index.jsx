@@ -1,20 +1,69 @@
 import style from './form.module.sass';
-import React, { Component } from 'react';
+import React, { useReducer } from 'react';
 import FormInput from './FormInput';
 import constants from '../../constants';
+import { reducer } from './reducer';
 
 const initialValues = {
   firstName: '',
   lastName: '',
   email: '',
   password: '',
-  isfirstNameValid: true,
-  islastNameValid: true,
-  isemailValid: true,
-  ispasswordValid: true,
 };
 
-class RegForm extends Component {
+function RegForm (props) {
+  const [state, dispatch] = useReducer(reducer, initialValues);
+
+  const submitHandler = e => {
+    const { registerUser } = props;
+    e.preventDefault();
+    registerUser({ ...state });
+  };
+
+  const handleChange = ({ target: { name, value } }) => dispatch({ name, value });
+  
+  const { firstName, lastName, email, password } = state;
+  return (
+    <form className={style.regForm} onSubmit={submitHandler}>
+      <h1>Registration form</h1>
+      <div className={style.inputWrapper}>
+        <FormInput
+          name='firstName'
+          value={firstName}
+          onChange={handleChange}
+          validationRegex={constants.REGEX_NAME}
+          placeholder='First Name'
+        />
+        <FormInput
+          name='lastName'
+          value={lastName}
+          onChange={handleChange}
+          validationRegex={constants.REGEX_NAME}
+          placeholder='Last Name'
+        />
+        <FormInput
+          name='email'
+          value={email}
+          onChange={handleChange}
+          validationRegex={constants.REGEX_EMAIL}
+          placeholder='Email'
+          type='email'
+        />
+        <FormInput
+          name='password'
+          value={password}
+          onChange={handleChange}
+          validationRegex={constants.REGEX_PASSWORD}
+          placeholder='Password'
+          type='password'
+        />
+      </div>
+      <input type='submit' className={style.regInput} value='Sign up'></input>
+    </form>
+  );
+}
+
+/*class RegForm extends Component {
   constructor (props) {
     super(props);
     this.state = { ...initialValues };
@@ -82,6 +131,6 @@ class RegForm extends Component {
       </form>
     );
   }
-}
+}*/
 
 export default RegForm;
