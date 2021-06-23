@@ -25,10 +25,10 @@ function NavMenu () {
         <ul className={style.list}>
           <NavItem to='/'>Home</NavItem>
           <NavItem to='/signup'>Sign Up Page</NavItem>
-          <NavItem to='/userlist'> Users Page</NavItem>
           <NavItem to='/counter'>Counter</NavItem>
           <NavItem to='/users'>UserLoader</NavItem>
           <NavItem to='/tracker'>Tracker</NavItem>
+          <NavItem to='/todo'> Todo App</NavItem>
         </ul>
       )}
     </nav>
