@@ -28,7 +28,7 @@ function AddForm ({ addTask }) {
                 type='text'
                 placeholder='What you want to do?'
               />
-              <ErrorMessage component='div' name='title' />
+              <ErrorMessage className={style.errorMsg} component='div' name='title' />
               <button className={style.submitBtn} type='submit'>
                 <AddCircle className={style.addIcon} fontSize='large' />
               </button>

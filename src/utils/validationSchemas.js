@@ -13,10 +13,14 @@ export const EMAIL_SCHEMA = yup
   .email()
   .required();
 
-export const NEW_TASK_SCHEMA = yup
+export const TITLE_SCHEMA = yup
   .string()
   .matches(/^[ -z]{3,64}$/g, 'String must be longer than 3 symbols!')
   .required();
+
+export const NEW_TASK_SCHEMA = yup.object({
+  title: TITLE_SCHEMA
+})
 
 export const PASSWORD_SCHEMA = yup
   .string()
